@@ -28,8 +28,8 @@ namespace Oniyamma
 	/// </summary>
 	public enum LogType
 	{
-		GO,     // 「いってきます」
-		IMHOME  // 「ただいま」
+		LEAVE_HOME,  // 「いってきます」
+		GO_HOME      // 「ただいま」
 	}
 	
 	/// <summary>
@@ -39,7 +39,7 @@ namespace Oniyamma
 	{
 		public static string DisplayName(this LogType type)
 		{
-			string[] names = { "go", "imhome" };
+			string[] names = { "leave_home", "go_home" };
 			return names[(int)type];
 		}
 	}

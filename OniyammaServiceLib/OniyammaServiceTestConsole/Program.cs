@@ -14,7 +14,7 @@ namespace Oniyamma
 		static void Main(string[] args)
 		{
 			Oniyamma.OniyammaService.Current.AddLog(new LogParameter() {
-				Type = LogType.GO,
+				Type = LogType.LEAVE_HOME,
 				FilePath = "C:\\Hoge\\hoge.jpg",
 				UserId = "569d08753846060c18fc9ef4",
 				Kiss  = 1,
