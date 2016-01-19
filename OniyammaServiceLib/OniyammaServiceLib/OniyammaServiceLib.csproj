@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emotion.cs" />
+    <Compile Include="IOniyammaService.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="OniyammaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weather.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
