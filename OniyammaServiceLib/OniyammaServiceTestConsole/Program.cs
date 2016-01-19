@@ -16,10 +16,15 @@ namespace Oniyamma
 			Oniyamma.OniyammaService.Current.AddLog(new LogParameter() {
 				Type = LogType.LEAVE_HOME,
 				FilePath = "C:\\Hoge\\hoge.jpg",
-				UserId = "569d08753846060c18fc9ef4",
-				Kiss  = 1,
-				Smile = 2,
+				UserId = "569d08753846060c18fc9ef4"
 			});
+			Oniyamma.OniyammaService.Current.ApplyEmotion(new EmotionParameter()
+			{
+				Kiss = 2,
+				Smile = 4
+			});
+			var weather = Oniyamma.OniyammaService.Current.GetWeather();
+			Console.WriteLine(weather.Temperature.ToString());
 		}
 	}
 }
