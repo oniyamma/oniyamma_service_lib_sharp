@@ -146,7 +146,7 @@ namespace Oniyamma
 		/// console.WriteLine(weatherInfo.Temperature.ToString());
 		/// </example>
 		/// <returns></returns>
-		WeatherInfo GetWeather();
+		WeatherInfo GetWeather(WeatherType dummyType = WeatherType.SUNNY);
 	}
 
 	/// <summary>
@@ -225,16 +225,17 @@ namespace Oniyamma
 		/// <summary>
 		/// Get weather info
 		/// </summary>
-		public WeatherInfo GetWeather()
+		public WeatherInfo GetWeather(WeatherType dummyType = WeatherType.SUNNY)
 		{
 			var request = new RestRequest("/api/v1/get_weather", Method.GET);
 			// var response = client.Execute(request);
 			// TODO: Call Api
 			// Return dummy info
+			Random rnd = new Random();
 			return new WeatherInfo()
 			{
-				Temperature = 2.4f,
-				Type = WeatherType.SNOW
+				Temperature = (float)Math.Round(rnd.Next(1, 20) + rnd.NextDouble(), 1),
+				Type = dummyType
 			};
 		}
 
