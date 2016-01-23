@@ -43,17 +43,18 @@ namespace Oniyamma
 		/// <param name="param"></param>
 		public void AddLog(LogParameter param)
 		{
-			var request = new RestRequest("/api/v1/add_log", Method.GET);
-			if (param.Type.HasValue)
-				request.AddQueryParameter("type", LogTypeExt.DisplayName(param.Type.Value)); // adds to POST or URL querystring based on Method
-			if (param.UserId != null)
-				request.AddQueryParameter("user_id", param.UserId);
-			if (param.FilePath != null)
-				request.AddQueryParameter("file_path", param.FilePath);
-			client.ExecuteAsync(request, response => 
+			var request = new RestRequest("/api/v1/add_log", Method.POST)
 			{
-				// noop
-			});
+				AlwaysMultipartFormData = true
+			};
+			request.AddHeader("Content-Type", "multipart/form-data");
+			if (param.Type.HasValue)
+				request.AddParameter("type", LogTypeExt.DisplayName(param.Type.Value)); // adds to POST or URL querystring based on Method
+			if (param.UserId != null)
+				request.AddParameter("user_id", param.UserId);
+			if (param.FilePath != null)
+				request.AddFile("image_file", param.FilePath);
+			client.Execute(request);
 		}
 
 		/// <summary>

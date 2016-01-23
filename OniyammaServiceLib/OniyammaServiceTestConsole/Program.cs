@@ -15,8 +15,8 @@ namespace Oniyamma
 		{
 			Oniyamma.OniyammaService.Current.AddLog(new LogParameter() {
 				Type = LogType.LEAVE_HOME,
-				FilePath = "C:\\Hoge\\hoge.jpg",
-				UserId = "569d08753846060c18fc9ef4"
+				FilePath = @"C:\Hoge\hoge.jpg",
+				UserId = "56a2e232af1841280d9f1061"
 			});
 			Oniyamma.OniyammaService.Current.ApplyEmotion(new EmotionParameter()
 			{
