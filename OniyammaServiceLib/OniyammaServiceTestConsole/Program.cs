@@ -13,6 +13,7 @@ namespace Oniyamma
 	{
 		static void Main(string[] args)
 		{
+			Oniyamma.OniyammaService.Current.Init("http://localhost:3000");
 			Oniyamma.OniyammaService.Current.AddLog(new LogParameter() {
 				Type = LogType.LEAVE_HOME,
 				FilePath = @"C:\Hoge\hoge.jpg",

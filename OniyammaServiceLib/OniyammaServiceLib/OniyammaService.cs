@@ -12,14 +12,9 @@ namespace Oniyamma
 	public class OniyammaService : IOniyammaService
 	{
 		/// <summary>
-		/// API's base url
-		/// </summary>
-		public const string API_BASE_URL = "http://localhost:3000";
-
-		/// <summary>
 		/// Rest client
 		/// </summary>
-		public RestClient client = new RestClient(API_BASE_URL);
+		public RestClient client;
 
 		/// <summary>
 		/// Shared instance
@@ -35,6 +30,15 @@ namespace Oniyamma
 			{
 				return Instance == null ? Instance = new OniyammaService() : Instance;
 			}
+		}
+
+		/// <summary>
+		/// Initialize OniyammaService
+		/// </summary>
+		/// <param name="apiBaseUrl"></param>
+		public void Init(string apiBaseUrl = "http://localhost:3000")
+		{
+			this.client = new RestClient(apiBaseUrl);
 		}
 
 		/// <summary>

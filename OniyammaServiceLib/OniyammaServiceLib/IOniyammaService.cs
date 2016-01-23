@@ -11,6 +11,12 @@ namespace Oniyamma
 	public interface IOniyammaService
 	{
 		/// <summary>
+		/// Initialize OniyammaService
+		/// </summary>
+		/// <param name="apiBaseUrl"></param>
+		void Init(string apiBaseUrl = "http://localhost:3000");
+
+		/// <summary>
 		/// Add log to server
 		/// </summary>
 		/// <param name="param"></param>
