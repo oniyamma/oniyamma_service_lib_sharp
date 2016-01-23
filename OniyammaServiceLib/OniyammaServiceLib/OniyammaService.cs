@@ -81,7 +81,7 @@ namespace Oniyamma
 				request.AddQueryParameter("eyes_closed_left", param.EyesClosedLeft.Value.ToString());
 			if (param.EyesClosedRight.HasValue)
 				request.AddQueryParameter("eyes_closed_right", param.EyesClosedRight.Value.ToString());
-			// TODO: Call Api
+			client.Execute(request);
 		}
 
 		/// <summary>
